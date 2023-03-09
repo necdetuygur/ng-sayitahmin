@@ -22,15 +22,15 @@ export class AppComponent {
       AdMob.initialize({
         requestTrackingAuthorization: true,
         testingDevices: [''],
-        initializeForTesting: true,
+        initializeForTesting: false,
       });
 
       const admobOptions: BannerAdOptions = {
-        adId: 'ca-app-pub-3940256099942544~3347511713',
+        adId: 'ca-app-pub-1862541363203489~1311046192',
         adSize: BannerAdSize.FULL_BANNER,
         position: BannerAdPosition.TOP_CENTER,
         margin: 0,
-        isTesting: true,
+        isTesting: false,
         // npa: true
       };
       AdMob.showBanner(admobOptions);
