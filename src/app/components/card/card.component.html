@@ -1,0 +1,26 @@
+<div>
+  <div class="text-center">
+    <span
+      class="badge fs-4 m-1 bg-light text-dark"
+      *ngFor="let number of gameService.numbers"
+    >
+      {{ number }}
+    </span>
+  </div>
+  <div class="mb-5">&nbsp;</div>
+  <div
+    class="btn-group btn-group-lg special footer fixed-bottom m-3"
+    role="group"
+  >
+    <button type="button" class="btn btn-danger" (click)="gameService.dream(0)">
+      Hayır Yok
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="gameService.dream(gameService.numbers[0])"
+    >
+      Evet Var
+    </button>
+  </div>
+</div>
