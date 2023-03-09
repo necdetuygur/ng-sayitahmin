@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sayı Tahmin Oyunu</string>
+    <string name="title_activity_main">Sayı Tahmin Oyunu</string>
+    <string name="package_name">com.necdetuygur.sayitahmin</string>
+    <string name="custom_url_scheme">com.necdetuygur.sayitahmin</string>
+</resources>
