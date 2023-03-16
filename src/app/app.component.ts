@@ -26,7 +26,7 @@ export class AppComponent {
       });
 
       const admobOptions: BannerAdOptions = {
-        adId: 'ca-app-pub-1862541363203489~1311046192',
+        adId: 'ca-app-pub-1862541363203489/3052061751',
         adSize: BannerAdSize.FULL_BANNER,
         position: BannerAdPosition.TOP_CENTER,
         margin: 0,
