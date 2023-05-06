@@ -11,3 +11,8 @@ body {
 .reklam-bosluk {
   padding-top: 50px;
 }
+
+.modal {
+  margin-top: 53px;
+  height: 85% !important;
+}

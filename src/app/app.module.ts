@@ -6,6 +6,7 @@ import { CardComponent } from './components/card/card.component';
 import { FinishComponent } from './components/finish/finish.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { ProgressComponent } from './components/progress/progress.component';
+import { UygulamalarComponent } from './components/uygulamalar/uygulamalar.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,11 @@ import { ProgressComponent } from './components/progress/progress.component';
     CardComponent,
     FinishComponent,
     IntroComponent,
-    ProgressComponent
+    ProgressComponent,
+    UygulamalarComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
