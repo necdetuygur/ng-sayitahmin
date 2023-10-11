@@ -20,7 +20,7 @@ export class AppComponent {
     const deviceInfo = await Device.getInfo();
     if (deviceInfo.platform !== 'web') {
       AdMob.initialize({
-        requestTrackingAuthorization: true,
+        // requestTrackingAuthorization: true,
         testingDevices: [''],
         initializeForTesting: false,
       });
