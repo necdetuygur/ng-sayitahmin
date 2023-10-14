@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GameService } from './services/game.service';
+
 import {
   AdMob,
   BannerAdOptions,
@@ -7,6 +7,7 @@ import {
   BannerAdPosition,
 } from '@capacitor-community/admob';
 import { Device } from '@capacitor/device';
+import { App as CapacitorApp } from '@capacitor/app';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,19 @@ import { Device } from '@capacitor/device';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(public gameService: GameService) {}
-
   async ngOnInit() {
     const deviceInfo = await Device.getInfo();
+
+    if (deviceInfo.platform !== 'web') {
+      CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+        if (!canGoBack) {
+          CapacitorApp.exitApp();
+        } else {
+          window.history.back();
+        }
+      });
+    }
+
     if (deviceInfo.platform !== 'web') {
       AdMob.initialize({
         // requestTrackingAuthorization: true,
