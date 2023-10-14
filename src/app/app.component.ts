@@ -8,6 +8,7 @@ import {
 } from '@capacitor-community/admob';
 import { Device } from '@capacitor/device';
 import { App as CapacitorApp } from '@capacitor/app';
+import { GameService } from './services/game.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { App as CapacitorApp } from '@capacitor/app';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(public gameService: GameService) {}
   async ngOnInit() {
     const deviceInfo = await Device.getInfo();
 
