@@ -6,6 +6,9 @@ import {
   AdOptions,
   AdLoadInfo,
   InterstitialAdPluginEvents,
+  RewardAdPluginEvents,
+  AdMobRewardItem,
+  RewardAdOptions,
 } from '@capacitor-community/admob';
 
 @Component({
@@ -20,7 +23,8 @@ export class FinishComponent {
 
   async ngOnInit() {
     setTimeout(async () => {
-      await this.showInterstitial();
+      // await this.showInterstitial();
+      await this.showReward();
     }, 100);
 
     clearInterval(this.countdownTimer);
@@ -44,5 +48,23 @@ export class FinishComponent {
     };
     await AdMob.prepareInterstitial(options);
     await AdMob.showInterstitial();
+  }
+
+  async showReward() {
+    AdMob.addListener(RewardAdPluginEvents.Loaded, (info: AdLoadInfo) => {
+      // alert(info);
+    });
+    AdMob.addListener(
+      RewardAdPluginEvents.Rewarded,
+      (rewardItem: AdMobRewardItem) => {
+        // alert(rewardItem);
+      }
+    );
+    const options: RewardAdOptions = {
+      // adId: 'ca-app-pub-1862541363203489/9223897716',
+      adId: 'ca-app-pub-1862541363203489/3635146227',
+    };
+    await AdMob.prepareRewardVideoAd(options);
+    const rewardItem = await AdMob.showRewardVideoAd();
   }
 }
