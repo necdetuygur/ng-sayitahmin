@@ -1,6 +1,6 @@
 {
   "name": "ng-sayitahmin",
-  "version": "1.23.15",
+  "version": "1.23.16",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
